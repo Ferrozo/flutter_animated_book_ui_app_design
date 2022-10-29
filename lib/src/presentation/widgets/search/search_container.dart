@@ -20,6 +20,9 @@ class SearchContainer extends StatelessWidget {
             size: 30,
             color: Colors.white,
           ),
+          disabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.transparent),
+          ),
         ),
       ),
     );

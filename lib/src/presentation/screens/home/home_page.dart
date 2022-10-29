@@ -1,6 +1,6 @@
-import 'package:animated_book_ui_app_design/main.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import '../../widgets/export_widgets.dart';
 
 import '../../widgets/export_widgets.dart';
 
@@ -46,62 +46,73 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 20),
-              const SearchContainer(),
-              Container(
-                margin: const EdgeInsets.only(top: 50),
-                alignment: Alignment.center,
-                child: const Text(
-                  'THE ARCHIVE',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+        body: Stack(children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 20),
+                const SearchContainer(),
+                Container(
+                  margin: const EdgeInsets.only(top: 50),
+                  alignment: Alignment.center,
+                  child: const Text(
+                    'THE ARCHIVE',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 320),
-              SizedBox(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'ALL EDITIONS',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                const SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: SizedBox(
+                    height: 320,
+                    child: CardContainer(
+                      imgUrl:
+                          'https://thumbs.dreamstime.com/b/rainbow-love-heart-background-red-wood-60045149.jpg',
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          for (int i = 0; i <= 4; i++)
-                            Container(
-                              margin: i > 0
-                                  ? const EdgeInsets.only(left: 10)
-                                  : null,
-                              height: 100,
-                              width: 100,
-                              color: Colors.red,
-                            ),
-                        ],
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              )
-            ],
+                SizedBox(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'ALL EDITIONS',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            for (int i = 0; i < 4; i++)
+                              Container(
+                                margin: i > 0
+                                    ? const EdgeInsets.only(left: 20)
+                                    : null,
+                                height: 100,
+                                width: 110,
+                                color: Colors.red,
+                              ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
+        ]),
         bottomNavigationBar: BottomNavigationBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
