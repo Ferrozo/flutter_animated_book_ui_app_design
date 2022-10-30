@@ -55,12 +55,12 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 15),
                 const SearchContainer(),
                 Container(
-                  margin: const EdgeInsets.only(top: 10),
+                  margin: const EdgeInsets.only(top: 15),
                   alignment: Alignment.center,
                   child: const Text(
                     'THE ARCHIVE',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),

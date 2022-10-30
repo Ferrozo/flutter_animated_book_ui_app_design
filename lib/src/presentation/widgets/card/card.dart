@@ -42,59 +42,64 @@ class _CardContainerState extends State<CardContainer>
             builder: (context, swipe, _) => Stack(
               clipBehavior: Clip.none,
               alignment: Alignment.center,
-              children: List.generate(draggableItems.length, (index) {
-                if (index == draggableItems.length - 1) {
-                  return PositionedTransition(
-                    rect: RelativeRectTween(
-                      begin: RelativeRect.fromSize(
-                          const Rect.fromLTWH(0, 0, 500, 500),
-                          const Size(500, 500)),
-                      end: RelativeRect.fromSize(
-                          Rect.fromLTWH(
-                              swipe != Swipe.none
-                                  ? swipe == Swipe.left
-                                      ? -50
-                                      : 50
-                                  : 0,
-                              0,
-                              500,
-                              500),
-                          const Size(580, 300)),
-                    ).animate(CurvedAnimation(
-                      parent: _animationController,
-                      curve: Curves.easeInOut,
-                    )),
-                    child: RotationTransition(
-                      turns: Tween<double>(
-                              begin: 0,
-                              end: swipe != Swipe.none
-                                  ? swipe == Swipe.left
-                                      ? -0.1 * 0.5
-                                      : 0.1 * 0.5
-                                  : 0.0)
-                          .animate(
+              children: List.generate(
+                draggableItems.length,
+                (index) {
+                  if (index == draggableItems.length - 1) {
+                    return PositionedTransition(
+                      rect: RelativeRectTween(
+                        begin: RelativeRect.fromSize(
+                            const Rect.fromLTWH(0, 0, 500, 500),
+                            const Size(500, 500)),
+                        end: RelativeRect.fromSize(
+                            Rect.fromLTWH(
+                                swipe != Swipe.none
+                                    ? swipe == Swipe.left
+                                        ? -50
+                                        : 50
+                                    : 0,
+                                0,
+                                500,
+                                500),
+                            const Size(580, 300)),
+                      ).animate(
                         CurvedAnimation(
                           parent: _animationController,
-                          curve:
-                              const Interval(0, 0.4, curve: Curves.easeInOut),
+                          curve: Curves.easeInOut,
                         ),
                       ),
-                      child: DragWidget(
-                        profile: draggableItems[index],
-                        index: index,
-                        swipeNotifier: swipeNotifier,
-                        isLastCard: true,
+                      child: RotationTransition(
+                        turns: Tween<double>(
+                          begin: 0,
+                          end: swipe != Swipe.none
+                              ? swipe == Swipe.left
+                                  ? -0.1 * 0.5
+                                  : 0.1 * 0.5
+                              : 0.0,
+                        ).animate(
+                          CurvedAnimation(
+                            parent: _animationController,
+                            curve:
+                                const Interval(0, 0.4, curve: Curves.easeInOut),
+                          ),
+                        ),
+                        child: DragWidget(
+                          profile: draggableItems[index],
+                          index: index,
+                          swipeNotifier: swipeNotifier,
+                          isLastCard: true,
+                        ),
                       ),
-                    ),
-                  );
-                } else {
-                  return DragWidget(
-                    profile: draggableItems[index],
-                    index: index,
-                    swipeNotifier: swipeNotifier,
-                  );
-                }
-              }),
+                    );
+                  } else {
+                    return DragWidget(
+                      profile: draggableItems[index],
+                      index: index,
+                      swipeNotifier: swipeNotifier,
+                    );
+                  }
+                },
+              ),
             ),
           ),
         ),
@@ -152,9 +157,11 @@ class _CardContainerState extends State<CardContainer>
               );
             },
             onAccept: (int index) {
-              setState(() {
-                draggableItems.removeAt(index);
-              });
+              setState(
+                () {
+                  draggableItems.removeAt(index);
+                },
+              );
             },
           ),
         ),
