@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import '../../widgets/export_widgets.dart';
 
-import '../../widgets/export_widgets.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -66,16 +64,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                const SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: SizedBox(
-                    height: 320,
-                    child: CardContainer(
-                      imgUrl:
-                          'https://thumbs.dreamstime.com/b/rainbow-love-heart-background-red-wood-60045149.jpg',
-                    ),
-                  ),
-                ),
+                const SizedBox(height: 20),
+                const CardContainer(),
+                const SizedBox(height: 30),
                 SizedBox(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
