@@ -1,4 +1,4 @@
-import 'package:animated_book_ui_app_design/src/domain/modals/card/card_model.dart';
+import 'package:animated_book_ui_app_design/src/domain/repository/cards_repository.dart';
 import 'package:flutter/material.dart';
 
 import '../../../config/constants.dart';
@@ -13,46 +13,19 @@ class CardContainer extends StatefulWidget {
 
 class _CardContainerState extends State<CardContainer>
     with SingleTickerProviderStateMixin {
-  List<CardModel> draggableItems = const [
-    CardModel(
-      distance: '10 miles away',
-      cardUrlImage: 'src/assets/avatar_2.png',
-    ),
-    CardModel(
-      distance: '10 miles away',
-      cardUrlImage: 'src/assets/avatar_3.png',
-    ),
-    CardModel(
-      distance: '10 miles away',
-      cardUrlImage: 'src/assets/avatar_1.jpg',
-    ),
-    // CardModel(
-    //
-    //     distance: '10 miles away',
-    //     cardUrlImage: 'src/assets/avatar_4.png',
-    //     ),
-    // CardModel(
-    //
-    //     distance: '10 miles away',
-    //     cardUrlImage: 'src/assets/avatar_5.png',
-    //     ),
-  ];
-
   ValueNotifier<Swipe> swipeNotifier = ValueNotifier(Swipe.none);
   late final AnimationController _animationController;
-
   @override
   void initState() {
     super.initState();
     _animationController = AnimationController(
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 100),
       vsync: this,
     );
     _animationController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         draggableItems.removeLast();
         _animationController.reset();
-
         swipeNotifier.value = Swipe.none;
       }
     });
@@ -74,19 +47,19 @@ class _CardContainerState extends State<CardContainer>
                   return PositionedTransition(
                     rect: RelativeRectTween(
                       begin: RelativeRect.fromSize(
-                          const Rect.fromLTWH(0, 0, 580, 340),
-                          const Size(580, 340)),
+                          const Rect.fromLTWH(0, 0, 500, 500),
+                          const Size(500, 500)),
                       end: RelativeRect.fromSize(
                           Rect.fromLTWH(
                               swipe != Swipe.none
                                   ? swipe == Swipe.left
-                                      ? -300
-                                      : 300
+                                      ? -50
+                                      : 50
                                   : 0,
                               0,
-                              580,
-                              340),
-                          const Size(580, 340)),
+                              500,
+                              500),
+                          const Size(580, 300)),
                     ).animate(CurvedAnimation(
                       parent: _animationController,
                       curve: Curves.easeInOut,
@@ -96,8 +69,8 @@ class _CardContainerState extends State<CardContainer>
                               begin: 0,
                               end: swipe != Swipe.none
                                   ? swipe == Swipe.left
-                                      ? -0.1 * 0.3
-                                      : 0.1 * 0.3
+                                      ? -0.1 * 0.5
+                                      : 0.1 * 0.5
                                   : 0.0)
                           .animate(
                         CurvedAnimation(
@@ -137,7 +110,6 @@ class _CardContainerState extends State<CardContainer>
                 // ActionButtonWidget(
                 // 	onPressed: () {
                 // 		swipeNotifier.value = Swipe.left;
-                // 		_animationController.forward();
                 // 	},
                 // 	icon: const Icon(
                 // 		Icons.close,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../domain/modals/card/card_model.dart';
+import '../../../domain/models/card/card_model.dart';
 
 class ProfileCard extends StatelessWidget {
   const ProfileCard({Key? key, required this.profile}) : super(key: key);
@@ -9,7 +9,7 @@ class ProfileCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 260,
-      width: 220,
+      width: 210,
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Stack(
         children: [

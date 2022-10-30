@@ -1,3 +1,5 @@
+import 'package:animated_book_ui_app_design/src/domain/repository/cards_repository.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import '../../widgets/export_widgets.dart';
@@ -64,19 +66,28 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
                 const CardContainer(),
                 const SizedBox(height: 30),
                 SizedBox(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'ALL EDITIONS',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text(
+                            'ALL EDITIONS',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Icon(
+                            CupertinoIcons.slider_horizontal_3,
+                            size: 35,
+                          )
+                        ],
                       ),
                       const SizedBox(
                         height: 10,
@@ -85,14 +96,21 @@ class _HomePageState extends State<HomePage> {
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
-                            for (int i = 0; i < 4; i++)
+                            for (int i = 0; i <= 4; i++)
                               Container(
                                 margin: i > 0
                                     ? const EdgeInsets.only(left: 20)
                                     : null,
                                 height: 100,
                                 width: 110,
-                                color: Colors.red,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                      draggableItems[i].cardUrlImage,
+                                    ),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
                           ],
                         ),
