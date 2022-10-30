@@ -52,10 +52,10 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
                 const SearchContainer(),
                 Container(
-                  margin: const EdgeInsets.only(top: 50),
+                  margin: const EdgeInsets.only(top: 10),
                   alignment: Alignment.center,
                   child: const Text(
                     'THE ARCHIVE',
@@ -66,9 +66,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 5),
                 const CardContainer(),
-                const SizedBox(height: 30),
+                const SizedBox(height: 15),
                 SizedBox(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                                     ? const EdgeInsets.only(left: 20)
                                     : null,
                                 height: 100,
-                                width: 110,
+                                width: 120,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage(

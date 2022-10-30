@@ -107,15 +107,6 @@ class _CardContainerState extends State<CardContainer>
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                // ActionButtonWidget(
-                // 	onPressed: () {
-                // 		swipeNotifier.value = Swipe.left;
-                // 	},
-                // 	icon: const Icon(
-                // 		Icons.close,
-                // 		color: Colors.grey,
-                // 	),
-                // ),
                 SizedBox(width: 20),
               ],
             ),

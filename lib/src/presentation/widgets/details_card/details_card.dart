@@ -8,8 +8,8 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 260,
-      width: 210,
+      height: 320,
+      width: 245,
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Stack(
         children: [
