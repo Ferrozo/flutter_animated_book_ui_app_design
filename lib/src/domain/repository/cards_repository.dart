@@ -2,18 +2,36 @@ import 'package:animated_book_ui_app_design/src/domain/models/card/card_model.da
 
 List<CardModel> draggableItems = [
   const CardModel(
+    cardTitle: 'The Mission to Archive Nintendo\'s Dying Social Media Platform',
     cardUrlImage: 'src/assets/2.jpg',
+    cardDescription:
+        'For five years, Nintendo fans have filled up the walls of Nintendo\'s social media service with simple communications and beautiful hand drawn art. That art often filtered into Wii U and 3DS games, and made for unique experiences while playing Mario Kart 8 and Splatoon online. All of that will end on November 7, 2017 when Nintendo pulls the plug.\nWe started the Miiverse service in 2012 along with the launch of the Wii U system because we wanted to provide a space where users could share their feelings about games with each other," Nintendo said in a statement. "Thanks to users\' support throughout the years, we think we were able to achieve that goal. We decided to end the service at this time because, among other reasons, many users are shifting to social networking services.',
   ),
   const CardModel(
+    cardTitle:
+        'Archivists Create a Searchable Index of 107 Million Science Articles',
     cardUrlImage: 'src/assets/1.jpg',
+    cardDescription:
+        'The General Index is here to serve as your map to human knowledge. Pulled from 107,233,728 journal articles, The General Index is a searchable collection of keywords and short sentences from published papers that can serve as a map to the paywalled domains of scientific knowledge \nIn full, The General Index is a massive 38 terabyte archive of searchable terms. Compressed, it comes to 8.5 terabytes. It can be pulled directly from archive.org, which can be a difficult and lengthy process. People on the /r/DataHoarder subreddit have uploaded the data to a remote server and are spreading it across BitTorrent. You can help by grabbing a seed here.\nThis is an early release of the general index, a work in progress,” Carl Malamud, the founder of Public.Resource.org and co-creator of the General Index, said in a video about the archive. “In some cases text extraction failed, sometimes metadata is not available or is perhaps incorrect while the underlying corpus is large, it is not complete and it is not up to date.',
   ),
   const CardModel(
+    cardTitle:
+        'Essential Alan Lomax, According to the Guy Who Knows His Work Best',
     cardUrlImage: 'src/assets/3.jpg',
+    cardDescription:
+        'Nathan Salsburg never met Alan Lomax, the famed American musicologist. But now, exactly 15 years after Lomax\'s death on July 19, 2002, there\'s likely no person on the planet who\'s spent more time with the deceased archivist. "I do feel like I know him very intimately," Salsburg says. "Every day I\'m interacting with something that his fingerprints are all over."\nSalsburg has one of the coolest jobs in the world: curator of the Alan Lomax Archive at the Association for Cultural Equity. Based in Louisville, Kentucky, Salsburg spends his days digging through the wide variety—both in content and format—of recordings Lomax made throughout his seven decades archiving folk music in Britain, the Caribbean, and the American southeast.',
   ),
   const CardModel(
+    cardTitle: '2,000,000+ Photos Archive 50 Years of Aussie Life—in Arkansas',
     cardUrlImage: 'src/assets/4.jpg',
+    cardDescription:
+        'When a vast trove of photographic negatives was discovered in a random Chicago storage locker, the late, previously unknown Vivian Maier became a global art world sensation. The saga of the Sydney Morning Herald vintage photo archive is a lot like that—but on a Citizen Kane-scale, and in Arkansas. It\'s a long and unexpectedly sordid tale in which an Australian media conglomerate sought to digitize its 7,000,000-image photo archive, shipped it all to Little Rock for that purpose, and lost hold of it when the scanning company was raided by the FBI in an unrelated matter. Recently, the archive resurfaced, with over 2,000,000 images intact, for sale and seemingly crying out to be sorted, celebrated, and perhaps repatriated. For Daniel Miller of Santa Monica\'s Duncan Miller Gallery, it was a deal he couldn\'t refuse, a vernacular photography buff\'s dream come true. "It\'s incredibly rare to discover an archive as significant as this one," Miller says. Then the reality of organizing the collection set in.',
   ),
   const CardModel(
+    cardTitle:
+        'Programmers Are Racing to Save Apple II Software Before It Goes Extinct',
     cardUrlImage: 'src/assets/5.jpg',
+    cardDescription:
+        'As technology evolves and each new gadget usurps the last, devices exist in a protracted twilight when their software and hardware can be preserved before they\'re lost forever. The Apple II, the computer released in 1977 that made the Steves (Jobs and Wozniak) famous multi-millionaires, is in its twilight.\nNow, a group of crackers are working together to save every Apple II program possible—there\'s tens of thousands floating around—before the proper hardware no longer exists or the floppy disks lose their magnetic charge and their data. They have the machinery, and they\'ve coded their own software; for the first time, cracking the anti-piracy protections on Apple II software and copying it exactly is downright easy.',
   ),
 ];

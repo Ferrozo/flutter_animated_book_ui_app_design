@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 
-class DetailsPage extends StatefulWidget {
-  const DetailsPage({Key? key}) : super(key: key);
+import '../../../domain/models/card/card_model.dart';
 
-  @override
-  State<DetailsPage> createState() => _DetailsPageState();
-}
+class DetailsPage extends StatelessWidget {
+  const DetailsPage({Key? key, required this.cardInfo}) : super(key: key);
+  final CardModel cardInfo;
 
-class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,8 +29,11 @@ class _DetailsPageState extends State<DetailsPage> {
         ),
       ),
       backgroundColor: Colors.orange,
-      body: const Center(
-        child: Text('Details page'),
+      body: Center(
+        child: Column(children: [
+          Text(cardInfo.cardTitle.toString()),
+          Image.asset(cardInfo.cardUrlImage),
+        ]),
       ),
     );
   }
