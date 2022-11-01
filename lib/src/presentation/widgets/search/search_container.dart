@@ -15,6 +15,7 @@ class SearchContainer extends StatelessWidget {
       ),
       child: const TextField(
         decoration: InputDecoration(
+          border: InputBorder.none,
           prefixIcon: Icon(
             Ionicons.search,
             size: 30,
