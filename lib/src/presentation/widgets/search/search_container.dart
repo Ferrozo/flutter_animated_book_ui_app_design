@@ -11,7 +11,7 @@ class SearchContainer extends StatelessWidget {
       height: 55,
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.3),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(30),
       ),
       child: const TextField(
         decoration: InputDecoration(

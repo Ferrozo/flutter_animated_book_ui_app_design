@@ -76,13 +76,75 @@ class DetailsPage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: 242.2,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+                  height: 230,
                   color: Colors.white,
                   width: MediaQuery.of(context).size.width,
-                  child: const Text('Container'),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'ISSUE Nº',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        const Text(
+                          '0X',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 100,
+                          ),
+                        ),
+                        Text(
+                          '${cardInfo.cardTitle}',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
-            )
+            ),
+            Positioned(
+              bottom: 178,
+              right: 10,
+              child: SizedBox(
+                height: 110,
+                width: 55,
+                child: Column(
+                  children: [
+                    Container(
+                      height: 55,
+                      width: MediaQuery.of(context).size.width,
+                      color: Colors.black87,
+                      child: const Icon(
+                        Icons.favorite_border,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                    Container(
+                      height: 55,
+                      width: MediaQuery.of(context).size.width,
+                      color: const Color.fromARGB(255, 3, 199, 173),
+                      child: const Icon(
+                        Icons.bookmark_border_outlined,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
