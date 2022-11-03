@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:animated_book_ui_app_design/src/domain/repository/cards_repository.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +17,29 @@ class _CardContainerState extends State<CardContainer>
     with SingleTickerProviderStateMixin {
   ValueNotifier<Swipe> swipeNotifier = ValueNotifier(Swipe.none);
   late final AnimationController _animationController;
+
+  int randomnumber = 0, randomminmax = 0;
+  double randomdouble = 0.00;
+
+  int randomNumber() {
+    int random = Random().nextInt(1000); //1000 is MAX value
+    //generate random number below 1000
+    return random;
+  }
+
+  int randomNumberMinMax(int min, int max) {
+    int randomminmax = min + Random().nextInt(max - min);
+    //generate random number within minimum and maximum value
+    return randomminmax;
+  }
+
+  double randomDouble() {
+    double randomdouble = Random().nextDouble();
+    //generate random double within 0.00 - 1.00;
+    return double.parse(randomdouble.toStringAsFixed(4));
+    //toStringAsFixed will fix decimal length to 4, 0.3454534 = 0.3454
+  }
+
   @override
   void initState() {
     super.initState();
@@ -92,10 +117,13 @@ class _CardContainerState extends State<CardContainer>
                       ),
                     );
                   } else {
-                    return DragWidget(
-                      profile: draggableItems[index],
-                      index: index,
-                      swipeNotifier: swipeNotifier,
+                    return Transform.rotate(
+                      angle: index == 1 ? index * -0.07 : index * 0.07,
+                      child: DragWidget(
+                        profile: draggableItems[index],
+                        index: index,
+                        swipeNotifier: swipeNotifier,
+                      ),
                     );
                   }
                 },
@@ -128,7 +156,7 @@ class _CardContainerState extends State<CardContainer>
               return IgnorePointer(
                 child: Container(
                   height: 700.0,
-                  width: 80.0,
+                  width: 70.0,
                   color: Colors.transparent,
                 ),
               );
@@ -151,7 +179,7 @@ class _CardContainerState extends State<CardContainer>
               return IgnorePointer(
                 child: Container(
                   height: 700.0,
-                  width: 80.0,
+                  width: 70.0,
                   color: Colors.transparent,
                 ),
               );

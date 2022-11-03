@@ -101,10 +101,12 @@ class DetailsPage extends StatelessWidget {
                           ),
                         ),
                         Text(
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           '${cardInfo.cardTitle}',
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 30,
+                            fontSize: 25,
                           ),
                         ),
                       ],
