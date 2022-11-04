@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:animated_book_ui_app_design/src/domain/models/card/card_model.dart';
 import 'package:animated_book_ui_app_design/src/domain/repository/cards_repository.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +50,7 @@ class _CardContainerState extends State<CardContainer>
     );
     _animationController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        draggableItems.removeLast();
+        // draggableItems.removeLast();
         _animationController.reset();
         swipeNotifier.value = Swipe.none;
       }

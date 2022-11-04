@@ -17,6 +17,7 @@ class ProfileCard extends StatelessWidget {
         width: 230,
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: Stack(
+          clipBehavior: Clip.none,
           children: [
             Positioned.fill(
               child: ClipRRect(
