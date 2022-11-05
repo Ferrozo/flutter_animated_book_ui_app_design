@@ -18,8 +18,10 @@ class _HomePageState extends State<HomePage> {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color.fromARGB(255, 188, 236, 248),
-            Color.fromARGB(255, 156, 97, 246),
+            Color.fromARGB(255, 255, 255, 255),
+            Color.fromARGB(236, 255, 255, 255),
+            Color.fromARGB(255, 10, 10, 10),
+            Color.fromARGB(255, 0, 0, 0),
           ],
           begin: Alignment.bottomCenter,
           end: Alignment.topCenter,
@@ -35,6 +37,7 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                const Text('Ferrozo'),
                 IconButton(
                   onPressed: () {},
                   icon: const Icon(
@@ -124,7 +127,7 @@ class _HomePageState extends State<HomePage> {
         ]),
         bottomNavigationBar: BottomNavigationBar(
           elevation: 0,
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.white,
           type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(
@@ -161,3 +164,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+
+//Color.fromARGB(255, 188, 236, 248),
+// Color.fromARGB(255, 156, 97, 246),

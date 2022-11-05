@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:animated_book_ui_app_design/src/domain/models/card/card_model.dart';
+// import 'package:animated_book_ui_app_design/src/domain/models/card/card_model.dart';
 import 'package:animated_book_ui_app_design/src/domain/repository/cards_repository.dart';
 import 'package:flutter/material.dart';
 
